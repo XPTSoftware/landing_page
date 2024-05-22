@@ -1,0 +1,56 @@
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+.tools {
+    overflow: hidden;
+    padding: 60px 0;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+}
+
+.tools:before, .tools:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+}
+
+.tools:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.tools:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.tools:hover .tools-slide {
+    animation-play-state: paused;
+}
+
+.tools-slide {
+    animation: 25s slide infinite linear;
+    list-style-type: none;
+    display: flex;
+    gap: 7rem;
+    font-size: 3rem;
+}
+
+.tools-slide li {
+    display: inline-block;
+}
+
+.tools-slide li:nth-last-child(1){
+    margin-right: 3rem;
+}
