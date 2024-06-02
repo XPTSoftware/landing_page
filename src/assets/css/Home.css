@@ -1,0 +1,10 @@
+.llama-title {
+    font-size: 15rem;
+    font-weight: bolder;
+    z-index: 3;
+    background-image: url(./fire.gif);
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}

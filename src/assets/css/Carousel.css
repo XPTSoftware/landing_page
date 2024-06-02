@@ -1,0 +1,82 @@
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slide2 {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+.tools {
+    overflow: hidden;
+    background: white;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+}
+
+.tools:before, .tools:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    content: "";
+    z-index: 2;
+}
+
+.tools:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+}
+
+.tools:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+}
+
+.tools:hover .tools-slide, .tools:hover .tools-slide-2{
+    animation-play-state: paused;
+}
+
+.tools-slide{
+    animation: 25s slide infinite linear;
+    list-style-type: none;
+    display: flex;
+    gap: 7rem;
+    font-size: 3rem;
+}
+
+.tools-slide-2{
+    animation: 25s slide2 infinite linear;
+    list-style-type: none;
+    display: flex;
+    gap: 7rem;
+    font-size: 3rem;
+}
+
+.tools-slide li, .tools-slide-2 li {
+    display: inline-block;
+}
+
+.tools-slide li:nth-last-child(1), .tools-slide-2 li:nth-last-child(1) {
+    margin-right: 3rem;
+}
+
+.tools-slide .tag, .tools-slide-2 .tag{
+    display: inline-block;
+    background-color: #000;
+    border: 1px solid #000;
+    border-radius: 12px;
+    padding: 5px 10px;
+    margin: 5px;
+    font-size: 1.25rem;
+    color: #fff;
+}
